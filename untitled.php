@@ -33,13 +33,6 @@ $password = 'Coolgirl1';
 $host = 'localhost:3306';
 $dbname = 'ProjectMilestone2';
 $dsn = "mysql:host=$host;dbname=$dbname";  
-
-// Hannah Douglas (hcd6tc), Ayushi Ambhore (arak7e), Tijana Djokic (td4jj)
-      $SERVER = 'localhost:3306';
-      $USERNAME = 'globaluser';
-      $PASSWORD = 'Pm3databases';
-      $DATABASE = 'ProjectMilestone2';
-
 ////////////////////////////////////////////
 
  
