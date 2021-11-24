@@ -1,0 +1,84 @@
+<html>
+<body>
+   <h2>Trial Form</h2>
+   <BR>
+   <form action="trial.php" method="post">
+   User Name: <input type="text" name="userid">
+   Recipe ID: <input type="text" name="recipeid">
+   Contributor ID: <input type="text" name="contributorid">
+   <input type="Submit">
+   </form>
+</body>
+
+<div class = "w3-bar w3-black">
+  <button class = "buttonOff" onclick= "openPage(this, 'Enter')">Enter Your Ingredients</button>
+  <button class = "buttonOff" onclick="openPage(this, 'Find')">Find a Recipe</button>
+  <button class = "buttonOff" onclick="openPage(this, 'Upload')">Upload a Recipe</button>
+</div>
+
+<div id="Enter" class="city">
+  <h2>Don't know what to make? Find a recipe here!</h2>
+</div>
+
+<div id="Find" class="city" style="display:none">
+  <h2>Paris</h2>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Upload" class="city" style="display:none">
+  <h2>Tokyo</h2>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<style>
+.buttonOff {
+  background-color: #6495ED; /* Green */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;}
+.buttonOff:hover {
+   background-color: gray;
+}
+.button-selected{
+   background-color: gray; /* Green */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.buttonOn {
+  background-color: #6495ED; /* Green */
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;}
+
+</style>
+
+<script>
+function openPage(button, pageName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+   var elem = document.getElementsByClassName("button-selected")[0];    
+   if (elem) {
+        elem.className = "buttonOff";
+   }  
+
+  document.getElementById(pageName).style.display = "block"; 
+   button.className = "button-selected";
+
+}
+</script>
+
+</html>
