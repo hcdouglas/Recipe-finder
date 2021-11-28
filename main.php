@@ -1,10 +1,13 @@
 <?php
-
+// Initialize the session
+session_start();
+ 
 // logout
 if(isset($_POST['but_logout'])){
     session_destroy();
     header('location: registration.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +27,8 @@ if(isset($_POST['but_logout'])){
   <button class = "button-selected" onclick= "openPage(this, 'Enter')">Enter Your Ingredients</button>
   <button class = "buttonOff" onclick="openPage(this, 'Find')">Find a Recipe</button>
   <button class = "buttonOff" onclick="openPage(this, 'Upload')">Upload a Recipe</button>
+  <button class = "buttonOff" onclick="openPage(this, 'My')">My Recipes</button>
+    <button class = "buttonOff" onclick="openPage(this, 'Delete')">Delete a Recipe</button>
 </div>
 
 <div id="Enter" class="city">
@@ -39,15 +44,50 @@ if(isset($_POST['but_logout'])){
    <input type="checkbox" id="easy"><label for="easy">Easy (1-5 steps)</label>
    <input type="checkbox" id="medium"><label for="medium">Medium (6-10 steps)</label>
    <input type="checkbox" id="hard"><label for="hard">Hard (11+ steps)</label>
-
    <br>
+   <p>Ingredient list, separated by commas and spaces: </p>
+   <input id="ingreds" name="ingreds" size="125%" height="100"></input>
+   <br>
+      <input type="Submit">
    </form>
 
 </div>
 
 <div id="Find" class="city" style="display:none">
-  <h2>Paris</h2>
-  <p>Paris is the capital of France.</p> 
+  <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script> 
+  <script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function() {
+      $( "#Ingredientinput" ).change(function() {
+      
+        $.ajax({
+          url: 'searchRecipes.php', 
+          data: {searchRecipe: $( "#Ingredientinput" ).val()},
+          success: function(data){
+            $('#Ingredientresult').html(data);  
+          
+          }
+        });
+      });
+      
+    });
+    </script>
+  <body>
+    <h2>Search for a recipe based on ingredients in your kitchen! </h2> 
+             
+    <input class="xlarge" id="Ingredientinput" type="search" size="30" placeholder="look up an ingredient"/>
+    <br/><br/>
+    <div id="Ingredientresult">Search Result:</div>
+  
+    <br/><br/>
+  </body>
+</div>
+<style>
+     
+  .xlarge{
+      font-size: 16px;
+    }
+   </style>
 </div>
 
 <div id="Upload" class="city" style="display:none">
@@ -61,19 +101,30 @@ if(isset($_POST['but_logout'])){
   <p>Recipe Description</p>
    <textarea id="description" name="description" rows="4" cols="50"></textarea>
   <br>
-   <p>Ingredient list, separated by enters: </p>
-   <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea>
+   <p>Ingredient list, separated by commas and spaces: </p>
+   <input id="ingreds" name="ingreds" size="125%" height="100"></input>
    <p>Recipe steps: </p>
    <textarea id="steps" name="steps" rows="4" cols="50"></textarea>
    <p>Number of steps:</p>
   <input name="numSteps">
    <input type="Submit">
 </form>
-</div>
 <br></br>
 <form method='post' action="">
             <input type="submit" value="Logout" name="but_logout">
         </form>
+    </div>
+
+<div id="My" class="city" style="display:none">
+   <form action="getRecipes.php" method="post">
+   <input type="Submit" value="Yes">
+</form>
+</div>
+<br></br>
+<form method='post' action="">
+    <input type="submit" value="Logout" name="but_logout">
+</form>
+
 
 <style>
 .buttonOff {
