@@ -8,10 +8,8 @@ if(isset($_POST['submit'])){
 		// The function automatically generates a cryptographically safe salt.
 		$hashPassword = password_hash($password,PASSWORD_DEFAULT);
 		
-		//$sql = "insert into users (first_name, password) value('".$username."' ,'".$hashPassword."')";
 		$sql="INSERT INTO users (username, password)
-		VALUES
-      ('".$username."','".$hashPassword."')";
+		VALUES ('".$username."','".$hashPassword."')";
 		$result = mysqli_query($conn, $sql);
 		if($result)
 		{
@@ -21,9 +19,9 @@ if(isset($_POST['submit'])){
 			echo "Oops! Something went wrong. Please try again later.";
 		}
 	}
-	if(isset($_POST['submit'])){
+if(isset($_POST['haveAccount'])){
 		header("location: login.php");
-	}
+}
 ?>
 
 <h1>Registration</h1>
@@ -33,8 +31,8 @@ if(isset($_POST['submit'])){
 	<input type="password" name="password" value="" placeholder="Password">
 	<button type="submit" name="submit">Submit</button>
 </form>
-</div>
-<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-		<button id="haveAccount" name="haveAccount">Already have an account?</button>
-	</form>
 
+<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+	<button id="haveAccount" name="haveAccount">Already have an account?</button>
+</form>
+</div>

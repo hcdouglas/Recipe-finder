@@ -1,9 +1,7 @@
 <?php 
-session_start();
-
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: main.php");
     exit;
 }
 
@@ -19,20 +17,16 @@ if(isset($_POST['submit'])){
 	if($numRows  == 1){
 		$row = mysqli_fetch_assoc($rs);
 		if(password_verify($password,$row['password'])){
-			# echo "Password verified";
 			session_start();
             $_SESSION["loggedin"] = true;
             $_SESSION["id"] = $id;
-            $_SESSION["username"] = $username;      
+            $_SESSION["username"] = $username;    
             // Redirect user to welcome page
-            header("location: welcome.php");
+            header("location: main.php");
+            exit;
+		} else {
+			echo "Wrong password";
 		}
-		else{
-			echo "Wrong Password";
-		}
-	}
-	else{
-		echo "No User found";
 	}
 }
 ?>
