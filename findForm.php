@@ -31,7 +31,7 @@ ini_set('display_errors', 1);
         else{
           $n_mins=50;
         }
-        $stmt = $db->stmt_init();
+        $stmt = $con->stmt_init();
 
         $n_stepsL = (int) $n_steps-5;
         if($n_stepsL < 0){
