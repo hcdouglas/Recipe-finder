@@ -1,5 +1,5 @@
 <?php
-	
+	include('index.php');
  
 	$stmt = $con->stmt_init();
 	
