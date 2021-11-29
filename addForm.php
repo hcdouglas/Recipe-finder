@@ -13,7 +13,7 @@ if(isset($_POST['but_logout'])){
         {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
-        if(!isset($_SESSION['username'])){
+        if(isset($_SESSION['username'])){
           $username = $_SESSION["username"];
         }
 
