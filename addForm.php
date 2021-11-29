@@ -1,7 +1,6 @@
 <?php
 // Hannah Douglas (hcd6tc), Ayushi Ambhore (arak7e), Tijana Djokic (td4jj)
-include_once("./library.php"); // To connect to the database 
-include_once("./config.php");
+include_once("./index.php"); // To connect to the database 
 session_start();
  
 // logout
@@ -9,7 +8,6 @@ if(isset($_POST['but_logout'])){
     session_destroy();
     header('location: registration.php');
 }
-$con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
       // Check connection
       if (mysqli_connect_errno())
         {

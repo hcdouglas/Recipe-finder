@@ -1,40 +1,12 @@
-<?php 
-require_once("library.php");
-if(isset($_POST['submit'])){
-		$username = $_POST['user_name'];
-		$password = $_POST['password'];
-
-		// Hash a new password for storing in the database.
-		// The function automatically generates a cryptographically safe salt.
-		$hashPassword = password_hash($password,PASSWORD_DEFAULT);
-		
-		$sql="INSERT INTO users (username, password)
-		VALUES ('".$username."','".$hashPassword."')";
-		$result = mysqli_query($conn, $sql);
-		if($result)
-		{
-			echo "Registration successfully";
-			header("location: login.php");
-			exit;
-		} else {
-			echo "Oops! Something went wrong. Please try again later.";
-		}
-	}
-if(isset($_POST['haveAccount'])){
-		header("location: login.php");
-		exit;
-}
+<?php
+//Get Heroku ClearDB connection information
+$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$SERVER = $cleardb_url["host"];
+$USERNAME = $cleardb_url["user"];
+$PASSWORD = $cleardb_url["pass"];
+$DATABASE = substr($cleardb_url["path"],1);
+$active_group = 'default';
+$query_builder = TRUE;
+// Connect to DB
+$con = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 ?>
-
-<h1>Registration</h1>
-<div>
-<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-	<input type="text" name="user_name" value="" placeholder="Username">
-	<input type="password" name="password" value="" placeholder="Password">
-	<button type="submit" name="submit">Submit</button>
-</form>
-
-<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-	<button id="haveAccount" name="haveAccount">Already have an account?</button>
-</form>
-</div>

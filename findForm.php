@@ -2,11 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // Hannah Douglas (hcd6tc), Ayushi Ambhore (arak7e), Tijana Djokic (td4jj)
-        require_once('./library.php');
-        require_once("config.php");
-        $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
-        require "dbutil.php";
-        $db = DbUtil::loginConnection();
+        require_once('./index.php');
         // Check connection
         if (mysqli_connect_errno()) {
               echo("Can't connect to MySQL Server. Error code: " .

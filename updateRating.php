@@ -7,18 +7,14 @@ if(isset($_POST['but_logout'])){
     header('location: registration.php');
 }
 // Hannah Douglas (hcd6tc), Ayushi Ambhore (arak7e), Tijana Djokic (td4jj)
-        require_once('./library.php');
-        require_once("config.php");
-        require "dbutil.php";
-        $db = DbUtil::loginConnection();
-        $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
+        require_once('./index.php');
         // Check connection
         if (mysqli_connect_errno()) {
               echo("Can't connect to MySQL Server. Error code: " . mysqli_connect_error());
               return null;
         }
           $username = strval($_SESSION["username"]);
-                  $stmt = $db->stmt_init();
+                  $stmt = $con->stmt_init();
 		
 		    $recipe_id_update = $_GET["recipe_id_update"];
 		    $rating = $_GET["Rating1"]; 

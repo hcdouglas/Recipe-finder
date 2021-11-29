@@ -5,7 +5,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 
-require_once("config.php");
+require_once("index.php");
 if(isset($_POST['submit'])){
 	$username = trim($_POST['username']);
 	$password = trim($_POST['password']);

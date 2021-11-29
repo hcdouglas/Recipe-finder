@@ -2,6 +2,7 @@
 
 ////////////////////////////////////////////
 /** F21, PHP (on Google Standard App Engine) connect to MySQL instance (GCP) **/
+
 $username = 'root';                      // or your username
 $password = 'dbproj1234';        // or your password
 $host = 'cs4750-333118:us-east4:db-project';       // projectID = cs4750, SQL instance ID = db-demo

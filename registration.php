@@ -1,5 +1,5 @@
 <?php 
-require_once("library.php");
+require_once("index.php");
 if(isset($_POST['submit'])){
 		$username = $_POST['user_name'];
 		$password = $_POST['password'];
