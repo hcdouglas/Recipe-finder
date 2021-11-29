@@ -14,8 +14,8 @@ if(isset($_POST['but_logout'])){
 <!-- Hannah Douglas (hcd6tc), Ayushi Ambhore (arak7e), Tijana Djokic (td4jj) --> 
 
 <div class = "w3-bar w3-black">
-  <button class = "button-selected" onclick= "openPage(this, 'Enter')">Enter Your Ingredients</button>
-  <button class = "buttonOff" onclick="openPage(this, 'Find')">Find a Recipe</button>
+  <button class = "button-selected" onclick= "openPage(this, 'Enter')">Filter Recipes Time and Steps</button>
+  <button class = "buttonOff" onclick="openPage(this, 'Find')">Find a Recipe by Ingredient</button>
   <button class = "buttonOff" onclick="openPage(this, 'Upload')">Upload a Recipe</button>
   <button class = "buttonOff" onclick="openPage(this, 'My')">My Recipes</button>
     <button class = "buttonOff" onclick="openPage(this, 'Delete')">Delete a Recipe</button>

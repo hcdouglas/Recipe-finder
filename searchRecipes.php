@@ -1,6 +1,5 @@
 <?php
 	include('index.php');
- 
 	$stmt = $con->stmt_init();
 	
 	if($stmt->prepare("select name, minutes,n_steps, description from ingreds_tab,tab1_2 where ingreds_tab.recipe_id = tab1_2.id AND ingreds_tab.ingredient like ?") or die(mysqli_error($db))) {
