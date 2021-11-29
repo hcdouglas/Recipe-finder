@@ -28,7 +28,7 @@ if(isset($_POST['but_logout'])){
   <h2>Don't know what to make? Find a recipe here!</h2>
   <p1>What is your desired meal prep time in minutes:</p1>
   <br>
-   <input type="Radio" name="time" id="time" value="quick"><label for="quick">Quick (<20 mine)</label>
+   <input type="Radio" name="time" id="time" value="quick"><label for="quick">Quick (<20 mins)</label>
    <input type="Radio" name="time" id="time" value="med"><label for="med">Medium (20-50 mins)</label>
    <input type="Radio" name="time"  id="time" value="long"><label for="long">Long (>50 mins)</label>
    <br>
@@ -42,7 +42,10 @@ if(isset($_POST['but_logout'])){
    <br>
       <input type="Submit">
    </form>
-
+   <br></br>
+ <form method='post' action="">
+     <input type="submit" value="Logout" name="but_logout">
+  </form>
 </div>
 
 <div id="Find" class="city" style="display:none">
@@ -73,6 +76,10 @@ if(isset($_POST['but_logout'])){
   
     <br/><br/>
   </body>
+  <br></br>
+ <form method='post' action="">
+     <input type="submit" value="Logout" name="but_logout">
+  </form>
 </div>
 <style>
      
@@ -124,6 +131,10 @@ if(isset($_POST['but_logout'])){
    <input type="text" id="recipeDelete" name="recipeDelete">
    <input type="submit" name="s">
 </form>
+<br></br>
+ <form method='post' action="">
+     <input type="submit" value="Logout" name="but_logout">
+  </form>
 </div>
 
 <div id="Rate" class="city" style="display:none">
