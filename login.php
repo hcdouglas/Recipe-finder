@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 	$_SESSION['username'] = $username;
 	
 	$sql = "select * from users where username = '".$username."'";
-	$rs = mysqli_query($conn,$sql);
+	$rs = mysqli_query($con,$sql);
 	$numRows = mysqli_num_rows($rs);
 	
 	if($numRows  == 1){
