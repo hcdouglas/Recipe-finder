@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
 		
 		$sql="INSERT INTO users (username, password)
 		VALUES ('".$username."','".$hashPassword."')";
-		$result = mysqli_query($conn, $sql);
+		$result = mysqli_query($con, $sql);
 		if($result)
 		{
 			echo "Registration successfully";
