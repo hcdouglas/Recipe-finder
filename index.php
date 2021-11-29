@@ -1,4 +1,6 @@
-<?php
+<?php 
+    echo "Hello there Heroku, Danny here"
+/*
 // require_once("library.php");
 switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {    
     case '/':                   // URL (without file name) to a default screen
@@ -26,5 +28,5 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
       echo "Case 6";
       http_response_code(404);
       exit('Not Found');
-}  
+}  */
 ?>
