@@ -2,11 +2,11 @@
 
 ////////////////////////////////////////////
 /** F21, PHP (on Google Standard App Engine) connect to MySQL instance (GCP) **/
-// $username = 'root';                      // or your username
-// $password = 'your-root-password';        // or your password
-// $host = 'cs4750:us-east4:db-demo';       // projectID = cs4750, SQL instance ID = db-demo
-// $dbname = 'guestbook';
-// $dsn = "mysql:unix_socket=/cloudsql/cs4750:us-east4:db-demo;dbname=guestbook";
+$username = 'root';                      // or your username
+$password = 'dbproj1234';        // or your password
+$host = 'cs4750-333118:us-east4:db-project';       // projectID = cs4750, SQL instance ID = db-demo
+$dbname = 'ProjectMilestone2';
+$dsn = "mysql:unix_socket=/cloudsql/cs4750-333118:us-east4:db-project;dbname=ProjectMilestone2";
 
 // to get instance connection name, go to GCP SQL overview page
 ////////////////////////////////////////////
@@ -16,7 +16,7 @@
 // $password = 'your-root-password';        // or your password
 // $host = 'cs4750:us-east4:db-demo';       // projectID = cs4750, SQL instance ID = db-demo
 // $dbname = 'guestbook';
-// $dsn = "mysql:host=your-SQL-public-IP-address;dbname=$dbname";       // connect PHP (XAMPP) to DB (GCP)
+// $dsn = "mysql:host=35.245.200.77;dbname=$dbname";       // connect PHP (XAMPP) to DB (GCP)
 
 // to get public IP addres of the SQL instance, go to GCP SQL overview page
 
@@ -28,17 +28,17 @@
 ////////////////////////////////////////////
 
 /** F21, PHP (on local XAMPP) connect to MySQL (on local XAMPP) **/
-$username = 'hcdouglas';
-$password = 'Coolgirl1';
-$host = 'localhost:3306';
-$dbname = 'ProjectMilestone2';
-$dsn = "mysql:host=$host;dbname=$dbname";  
+//$username = 'hcdouglas';
+//$password = 'Coolgirl1';
+//$host = 'localhost:3306';
+//$dbname = 'ProjectMilestone2';
+//$dsn = "mysql:host=$host;dbname=$dbname";  
 
 // Hannah Douglas (hcd6tc), Ayushi Ambhore (arak7e), Tijana Djokic (td4jj)
-      $SERVER = 'localhost:3306';
-      $USERNAME = 'globaluser';
-      $PASSWORD = 'Pm3databases';
-      $DATABASE = 'ProjectMilestone2';
+//      $SERVER = 'localhost:3306';
+//      $USERNAME = 'globaluser';
+//      $PASSWORD = 'Pm3databases';
+//      $DATABASE = 'ProjectMilestone2';
 
 ////////////////////////////////////////////
 
