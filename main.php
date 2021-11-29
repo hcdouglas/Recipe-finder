@@ -130,7 +130,7 @@ if(isset($_POST['but_logout'])){
   <form action="RecipeByUserRating.php" method="post">
   <body>
     <h2>Rate a recipe! </h2>  
-  <p1>Your rating history: </p1>  
+  <p1>View your rating history: </p1>  
   <form action="RecipeByUserRating.php" method="post">
     <input type="Submit" value="Yes">
  </form>
