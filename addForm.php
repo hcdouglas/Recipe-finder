@@ -33,6 +33,8 @@ if(isset($_POST['but_logout'])){
         else{
           $stmt->execute();
           $stmt->store_result();
+          echo $ID;
+          echo $username; 
         }
       do{
         $sql = "INSERT IGNORE INTO ingreds_tab(recipe_id, ingredient)
