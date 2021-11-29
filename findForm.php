@@ -49,10 +49,11 @@ ini_set('display_errors', 1);
       $result = $stmt->get_result();
       $row = $result->fetch_assoc();
         // Print the data from the table row by row
-                 echo "<table border=1><th>name</th><th>minutes</th><th>number of steps</th><th>description</th>\n";
+                 echo "<table border=1><th>name</th><th>id</th><th>minutes</th><th>number of steps</th><th>description</th>\n";
   while($row = $result->fetch_assoc()): ?>
        <tr>
           <td><?php echo $row['name']; ?></td>
+          <td><?php echo $row['id']; ?></td>
            <td><?php echo $row['minutes']; ?></td>
           <td><?php echo $row['n_steps']; ?></td>
           <td><?php echo $row['description']; ?></td>
