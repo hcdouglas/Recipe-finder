@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
             $_SESSION["id"] = $id;
             $_SESSION["username"] = $username;    
             // Redirect user to welcome page
-            header("location: main.php");
+            header("location: https://recipe-finder-2.herokuapp.com/main.php");
             exit;
 		} else {
 			echo "Wrong password";
