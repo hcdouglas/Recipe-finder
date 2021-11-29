@@ -20,21 +20,18 @@ if(isset($_POST['but_logout'])){
           $username = strval($_SESSION["username"]);
                   $stmt = $db->stmt_init();
 
-        $stmt->prepare("SELECT name,minutes,n_steps,description FROM tab1_2 WHERE contributor_id=? ORDER BY minutes;") or die(mysqli_error($db));
+        $stmt->prepare("SELECT tab1_2.name, ratings.recipe_id, ratings.rating FROM tab1_2, ratings WHERE ratings.recipe_id = tab1_2.id AND ratings.user_id=?;") or die(mysqli_error($db));
           $stmt->bind_param("s", $username);
           $stmt->execute();
           $result = $stmt->get_result();
-          $row = $result->fetch_assoc(); // or while (...)
-          $stmt->bind_result($name, $minutes, $n_steps, $description);
-          
-          echo "<table border=1><th>name</th><th>minutes</th><th>number of steps</th><th>description</th>\n";
-          
+          $stmt->bind_result($name, $recipe_id, $rating);
+
+          echo "<table border=1><th>name</th><th>recipe_id</th><th>rating</th>\n";
   while($row = $result->fetch_assoc()): ?>
        <tr>
           <td><?php echo $row['name']; ?></td>
-           <td><?php echo $row['minutes']; ?></td>
-          <td><?php echo $row['n_steps']; ?></td>
-          <td><?php echo $row['description']; ?></td>
+           <td><?php echo $row['recipe_id']; ?></td>
+            <td><?php echo $row['rating']; ?></td>
         </tr>
  <?php endwhile;
 

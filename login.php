@@ -9,6 +9,7 @@ require_once("config.php");
 if(isset($_POST['submit'])){
 	$username = trim($_POST['username']);
 	$password = trim($_POST['password']);
+	$_SESSION['username'] = $username;
 	
 	$sql = "select * from users where username = '".$username."'";
 	$rs = mysqli_query($conn,$sql);
