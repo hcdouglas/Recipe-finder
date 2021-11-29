@@ -12,16 +12,6 @@ if(isset($_POST['but_logout'])){
 
 <!DOCTYPE html>
 <!-- Hannah Douglas (hcd6tc), Ayushi Ambhore (arak7e), Tijana Djokic (td4jj) --> 
-<body>
-   <h2>Trial Form</h2>
-   <BR>
-   <form action="trial.php" method="post">
-   User Name: <input type="text" name="userid">
-   Recipe ID: <input type="text" name="recipeid">
-   Contributor ID: <input type="text" name="contributorid">
-   <input type="Submit">
-   </form>
-</body>
 
 <div class = "w3-bar w3-black">
   <button class = "button-selected" onclick= "openPage(this, 'Enter')">Enter Your Ingredients</button>

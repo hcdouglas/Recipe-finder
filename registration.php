@@ -15,12 +15,14 @@ if(isset($_POST['submit'])){
 		{
 			echo "Registration successfully";
 			header("location: login.php");
+			exit;
 		} else {
 			echo "Oops! Something went wrong. Please try again later.";
 		}
 	}
 if(isset($_POST['haveAccount'])){
 		header("location: login.php");
+		exit;
 }
 ?>
 
