@@ -30,7 +30,7 @@ $dsn = "mysql:unix_socket=/cloudsql/cs4750-333118:us-east4:db-project;dbname=Pro
 
 /** F21, PHP (on local XAMPP) connect to MySQL (on local XAMPP) **/
 //$username = 'hcdouglas';
-//$password = 'Coolgirl1';
+//$password = '';
 //$host = 'localhost:3306';
 //$dbname = 'ProjectMilestone2';
 //$dsn = "mysql:host=$host;dbname=$dbname";  
